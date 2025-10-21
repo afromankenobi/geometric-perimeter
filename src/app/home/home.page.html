@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Figuras Geométricas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Figuras Geométricas</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Proper Ionic container approach -->
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-sm="10" size-md="8" size-lg="6" size-xl="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Figura Geométrica</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>Escoja una figura geométrica</ion-label>
+              <ion-select [(ngModel)]="selectedFigure" placeholder="Seleccionar">
+                <ion-select-option value="circulo">círculo</ion-select-option>
+                <ion-select-option value="triangulo">triángulo</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-sm="10" size-md="8" size-lg="6" size-xl="4">
+        <app-circle *ngIf="selectedFigure === 'circulo'"></app-circle>
+        <app-triangle *ngIf="selectedFigure === 'triangulo'"></app-triangle>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

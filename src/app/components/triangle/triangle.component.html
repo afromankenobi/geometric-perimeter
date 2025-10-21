@@ -1,0 +1,93 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="description">
+      <p>El perímetro de un triángulo es la suma de las longitudes de sus tres lados. En otras palabras, es la medida total del contorno o borde del triángulo.</p>
+    </div>
+
+    <!-- Diagrama educativo de triángulos -->
+    <div class="educational-diagram" (click)="openImageModal()">
+      <ion-img src="assets/triangulo.png"
+               alt="Diagrama educativo mostrando diferentes tipos de triángulos: equilátero, isósceles, escaleno">
+      </ion-img>
+      <div class="zoom-hint">
+        <small>👆 Toca para ampliar y leer mejor</small>
+      </div>
+    </div>
+
+    <div class="formula">
+      <strong>p = a + b + c</strong>
+    </div>
+
+    <!-- Proper Ionic responsive grid -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="4">
+          <ion-item>
+            <ion-input
+              label="Lado A (cm)"
+              type="number"
+              [(ngModel)]="ladoA"
+              placeholder="Ingrese el lado A">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md="4">
+          <ion-item>
+            <ion-input
+              label="Lado B (cm)"
+              type="number"
+              [(ngModel)]="ladoB"
+              placeholder="Ingrese el lado B">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md="4">
+          <ion-item>
+            <ion-input
+              label="Lado C (cm)"
+              type="number"
+              [(ngModel)]="ladoC"
+              placeholder="Ingrese el lado C">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button expand="block" (click)="calculate()" [disabled]="!canCalculate">
+      CALCULAR EL PERÍMETRO
+    </ion-button>
+
+    <div *ngIf="result !== null" class="result">
+      <ion-text>
+        <h3>El perímetro es {{ result }}</h3>
+      </ion-text>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<!-- Modal para zoom de imagen -->
+<ion-modal [isOpen]="isImageModalOpen" (willDismiss)="closeImageModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Tipos de Triángulos</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeImageModal()">
+            <ion-text>Cerrar</ion-text>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="image-modal-content">
+      <div class="zoomable-image">
+        <ion-img src="assets/triangulo.png"
+                 alt="Diagrama educativo mostrando diferentes tipos de triángulos: equilátero, isósceles, escaleno">
+        </ion-img>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
