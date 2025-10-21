@@ -16,7 +16,6 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -24,6 +23,7 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import "@ionic/angular/css/display.css";
 
 /**
  * Ionic Dark Mode
@@ -32,114 +32,5 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* Disable dark mode for consistent light theme */
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-/* @import '@ionic/angular/css/palettes/dark.system.css'; */
-
-/* App Specific Global Styles - Modern Clean Theme */
-:root {
-  /* Primary Color Palette */
-  --app-primary: #2563eb;        /* Modern blue */
-  --app-primary-light: #3b82f6;  /* Lighter blue */
-  --app-primary-dark: #1d4ed8;   /* Darker blue */
-
-  /* Accent Colors */
-  --app-success: #059669;        /* Green for results */
-  --app-success-light: #d1fae5;  /* Light green background */
-
-  /* Neutral Colors */
-  --app-gray-50: #f8fafc;
-  --app-gray-100: #f1f5f9;
-  --app-gray-200: #e2e8f0;
-  --app-gray-300: #cbd5e1;
-  --app-gray-600: #475569;
-  --app-gray-700: #334155;
-  --app-gray-900: #0f172a;
-
-  /* Semantic Colors */
-  --app-background: #ffffff;
-  --app-surface: #ffffff;
-  --app-border: var(--app-gray-200);
-}
-
-ion-content {
-  --background: var(--app-background);
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  min-height: 100vh;
-}
-
-ion-card {
-  width: 100%;
-  max-width: 100%;
-  margin: 16px auto;
-  border-radius: 16px;
-  background: var(--app-surface);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--app-border);
-  overflow: hidden;
-}
-
-ion-card-header {
-  background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-primary-light) 100%);
-  padding: 20px;
-}
-
-ion-card-title {
-  --color: white;  /* Proper Ionic theming way */
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-ion-card-content {
-  padding: 24px;
-}
-
-ion-button {
-  --background: var(--app-primary);
-  --background-hover: var(--app-primary-dark);
-  --background-activated: var(--app-primary-dark);
-  --border-radius: 12px;
-  --box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
-  height: 52px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 20px 0;
-}
-
-ion-button[disabled] {
-  --background: var(--app-gray-300);
-  --color: var(--app-gray-600);
-  --box-shadow: none;
-}
-
-ion-item {
-  --background: var(--app-gray-50);
-  --border-color: var(--app-border);
-  --border-radius: 12px;
-  --inner-padding-end: 16px;
-  --inner-padding-start: 16px;
-  --padding-start: 0;
-  --padding-end: 0;
-  margin: 12px 0;
-  border-radius: 12px;
-}
-
-ion-input {
-  --color: var(--app-gray-900);
-  --placeholder-color: var(--app-gray-600);
-  font-size: 1rem;
-}
-
-ion-select {
-  --placeholder-color: var(--app-gray-600);
-  --color: var(--app-gray-900);
-}
-
-ion-label {
-  color: var(--app-gray-700);
-  font-weight: 500;
-}
+/* Enable dark mode with class-based approach */
+@import "@ionic/angular/css/palettes/dark.class.css";

@@ -1,19 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Figuras Geométricas
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()" fill="clear" shape="round">
+        <ion-icon [name]="isDarkMode ? 'sunny' : 'moon'" slot="icon-only" color="gray-50"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Figuras Geométricas</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- Proper Ionic container approach -->
+<ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-sm="10" size-md="8" size-lg="6" size-xl="4">
